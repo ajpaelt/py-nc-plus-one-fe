@@ -1,10 +1,12 @@
 import NavLinks from "../components/NavLinks"
 import { Outlet } from "react-router"
-
+import { useUserContext } from "../context/UserContext"
+import LogInHeader from "../components/LogInHeader"
+import LogOutHeader from "../components/LogOutHeader"
 
 
 export default function Layout () {
-
+    const { userState } = useUserContext()
     return (
         <div>
             <header>
@@ -12,6 +14,9 @@ export default function Layout () {
                     <h1>Event Manager API</h1>
                     <div className="sub-header">
                         <NavLinks/>
+                        {userState.status !== "success" && <LogInHeader/>}
+                        {userState.status === "success" && <LogOutHeader/>}
+                        {userState.status === "success" && <p>{userState.user.email}</p>}
                     </div>
                 </div>
             </header>
