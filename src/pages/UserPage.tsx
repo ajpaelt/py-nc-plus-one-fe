@@ -3,7 +3,7 @@ import { useUserContext } from "../context/UserContext"
 
 
 export default function UserPage() {
-    const { logoutUser, userState } = useUserContext()
+    const { logoutUser } = useUserContext()
 
     return (
         <>

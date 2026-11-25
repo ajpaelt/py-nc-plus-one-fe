@@ -1,7 +1,11 @@
 import { type Event } from "../types"
+import { useUserContext } from "../context/UserContext"
 
 export default function EventsDetails(props: Event) {
+    const { userState } = useUserContext()
     const { id, title, starts_at: start, ends_at: end, location: loc, address, capacity, created_at: created } = props
+
+
     return (
         <>
             <h2>Event {id}, {title}</h2>
