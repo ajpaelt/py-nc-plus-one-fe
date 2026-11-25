@@ -16,6 +16,17 @@ export interface Event {
     address?: string;
     capacity?: number;
     created_at: string;
+    event_rank?: number;
+    total_rsvps?: number;
+    total_events?: number;
+}
+
+export interface EventsApiItem {
+    events: Event[];
+}
+
+export interface EventApiItem {
+    event: Event
 }
 
 export interface User {
@@ -23,6 +34,15 @@ export interface User {
     name: string;
     email: string;
     created_at: string;
+}
+
+export interface Rsvp {
+    attendee_id: number;
+    event_id: number;
+}
+
+export interface RsvpApiItem {
+    rsvp: Rsvp
 }
 
 export type UserBasic = Pick<User, "id" | "name">;
@@ -36,8 +56,9 @@ export type UserState =
 export interface UserContextValue {
     userState: UserState;
     loginUser: (email: string, password: string) => Promise<void>;
-    registerUser: (email: string, password: string) => Promise<void>;
+    registerUser: (name: string, email: string, password: string) => Promise<void>;
     logoutUser: () => Promise<void>
+    clearError: () => void
 };
 
 export interface Login {

@@ -33,7 +33,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
-    --text-h: #f3f4f6;
+    --text-h: #d88ad9;
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
@@ -112,7 +112,7 @@ code {
 
 ul {
   list-style: none;
-  padding: 0;
+  padding: 10px 5px 5px;
   margin: 0;
 }
 
@@ -129,4 +129,62 @@ ul {
 
 .event-card p {
   margin-top: 0;
+}
+
+
+.nav-link {
+text-decoration: none;
+color: #333;
+padding: 5px 20px;
+border-radius: 15px;
+font-weight: 500;
+transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+background-color: #684a6952;
+color: #111;
+}
+
+.nav-link.active {
+background-color: #16171d;
+color: #d88ad9;
+}
+
+.sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background-color: #d88ad9;
+  border-bottom: 1px solid #d88ad9;
+}
+.navbar {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+}
+
+.login-container, .register-container {
+    flex: 1;
+    max-width: 400px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
 }
