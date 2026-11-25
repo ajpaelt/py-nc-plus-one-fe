@@ -2,6 +2,7 @@ import { useEvent } from "../hooks/useEvent"
 import { useParams } from "react-router"
 import NotFoundPage from "./NotFoundPage"
 import EventsDetails from "../components/EventDetails"
+import RSVPToggle from "../components/RSVPToggle"
 
 
 export default function EventPage() {
@@ -21,9 +22,12 @@ export default function EventPage() {
                         <p role="alert">{error}</p>
                         <button className="btn" onClick={() => refetch()}>Retry</button>
                         </div>)
-    if (event.length === 0) return <p>No Pokemon...</p>
+    if (event.length === 0) return <p>No Events...</p>
 
     return (
-        <EventsDetails id={e.id} title={e.title} starts_at={e.starts_at} ends_at={e.ends_at} location={e.location} address={e.address} capacity={e.capacity} created_at={e.created_at}/>
+        <>
+            <EventsDetails id={e.id} title={e.title} starts_at={e.starts_at} ends_at={e.ends_at} location={e.location} address={e.address} capacity={e.capacity} created_at={e.created_at}/>
+            <RSVPToggle id={e.id}/>
+        </>
     )
 }
