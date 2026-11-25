@@ -9,9 +9,6 @@ export default function NavLinks() {
             <NavLink to="/events" end className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
                 Browse Events
             </NavLink>
-            <NavLink to="/login" end className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-                Login/Register
-            </NavLink>
         </nav>
     )
 }
