@@ -21,6 +21,26 @@ export interface Event {
     total_events?: number;
 }
 
+
+export interface Venue {
+    id: number;
+    name: string;
+    address?: string;
+    capacity: number;
+}
+
+export interface VenuesApiItem{
+    venues: Venue[];
+}
+
+export interface PostEvent {
+    title: string;
+    description?: string
+    starts_at: string;
+    ends_at: string;
+    venue_id: number | undefined;
+}
+
 export interface EventsApiItem {
     events: Event[];
 }
