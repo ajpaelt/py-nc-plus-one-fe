@@ -1,5 +1,5 @@
-import type { EventsItem, Event, EventApiItem, EventsApiItem, Rsvp, RsvpApiItem } from "../types";
-import { apiGet, apiPost, authApiDel, authApiPost } from "./client";
+import type { EventsItem, Event, EventApiItem, EventsApiItem, RsvpApiItem, PostEvent } from "../types";
+import { apiGet, authApiDel, authApiPost } from "./client";
 
 
 export const getEventsList = async (): Promise<EventsItem[]> => {
@@ -18,4 +18,8 @@ export const postRsvp = async(event_id: number, token: string): Promise<void> =>
 
 export const delRsvp = async(event_id: number, token: string): Promise<void> => {
    await authApiDel<RsvpApiItem>(import.meta.env.VITE_API_URL, `/events/${event_id}/unrsvp`, token);
+}
+
+export const postEvent = async(body: PostEvent, token: string): Promise<void> => {
+    await authApiPost<EventApiItem>(import.meta.env.VITE_API_URL, '/events', body,  token)
 }
