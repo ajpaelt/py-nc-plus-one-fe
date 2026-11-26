@@ -1,10 +1,12 @@
-export interface EventsItem {
-    id: number;
-    title: string;
-    starts_at: string;
-    ends_at: string;
-    location: string;
-}
+import { patchEvent } from "./api/events";
+
+export type EventsItem = Pick<Event, 
+    "id" |
+    "title" |
+    "starts_at" |
+    "ends_at" |
+    "location"
+>
 
 export interface Event {
     id: number;
@@ -40,6 +42,8 @@ export interface PostEvent {
     ends_at: string;
     venue_id: number | undefined;
 }
+
+export type  PatchEvent = Partial<PostEvent>;
 
 export interface EventsApiItem {
     events: Event[];
