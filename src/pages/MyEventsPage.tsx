@@ -1,3 +1,4 @@
+import { NavLink } from "react-router"
 import EventsList from "../components/EventsList"
 import { useMyEvents } from "../hooks/useMyEvents"
 
@@ -14,6 +15,12 @@ export default function MyEventsPage() {
 
 
     return (
-        <EventsList events={eventState}/>
+        <>
+            <EventsList events={eventState}/>
+            <NavLink to="/user/events/new" >
+                Create New Event
+            </NavLink>
+        </>
+        
     )
 }

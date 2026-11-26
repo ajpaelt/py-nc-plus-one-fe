@@ -10,6 +10,7 @@ import UserPage from "../pages/UserPage";
 import MyRsvpsPage from "../pages/MyRsvpsPage";
 import MyEventsPage from "../pages/MyEventsPage";
 import { ProtectedRoute } from "./ProtectedRoute";
+import NewEventPage from "../pages/NewEventPage";
 
 export default function AppRoutes() {
 
@@ -26,6 +27,7 @@ export default function AppRoutes() {
                 <Route path="user" element={<UserPage />} />
                 <Route path="user/rsvps" element={<MyRsvpsPage />} />
                 <Route path="user/events" element={<MyEventsPage />} />
+                <Route path="user/events/new" element={<NewEventPage />} /> 
             </Route>
 
                 <Route path="*" element={<NotFoundPage />} />
